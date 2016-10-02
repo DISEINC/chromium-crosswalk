@@ -50,7 +50,7 @@ class MediaThrottler implements MediaPlayer.OnErrorListener {
     // Intervals between media server crashes that are considered normal. It
     // takes about 5 seconds to restart the media server. So this value has to
     // be larger than 5 seconds.
-    private static final long SERVER_CRASH_INTERVAL_THRESHOLD_IN_MILLIS = 60000;
+    private static final long SERVER_CRASH_INTERVAL_THRESHOLD_IN_MILLIS = 100;
 
     // Delay to keep the watch dog player alive When there are no decoding
     // requests. This is introduced to avoid recreating the watch dog over and
@@ -60,7 +60,7 @@ class MediaThrottler implements MediaPlayer.OnErrorListener {
     // When |mServerCrashCount| reaches this threshold, throttling will start.
     // This is to prevent a page from loading a malformed video over and over
     // to crash the media server excessively.
-    private static final int SERVER_CRASH_COUNT_THRESHOLD_FOR_THROTTLING = 4;
+    private static final int SERVER_CRASH_COUNT_THRESHOLD_FOR_THROTTLING = 999999;
 
     /**
      * A background task to release the watch dog player.
