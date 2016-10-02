@@ -229,13 +229,14 @@ void Fullscreen::requestFullscreen(Element& element, RequestType requestType)
         //   An algorithm is allowed to show a pop-up if, in the task in which the algorithm is running, either:
         //   - an activation behavior is currently being processed whose click event was trusted, or
         //   - the event listener for a trusted click event is being handled.
-        if (!UserGestureIndicator::utilizeUserGesture()) {
+        // We need to do this without user gesture...
+        /*if (!UserGestureIndicator::utilizeUserGesture()) {
             String message = ExceptionMessages::failedToExecute("requestFullScreen",
                 "Element", "API can only be initiated by a user gesture.");
             document()->addConsoleMessage(
                 ConsoleMessage::create(JSMessageSource, WarningMessageLevel, message));
             break;
-        }
+        }*/
 
         // Fullscreen is not supported.
         if (!fullscreenIsSupported(element.document()))
