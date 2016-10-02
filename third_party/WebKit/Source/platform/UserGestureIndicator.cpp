@@ -200,14 +200,15 @@ UserGestureIndicator::~UserGestureIndicator()
 // static
 bool UserGestureIndicator::utilizeUserGesture()
 {
-    if (UserGestureIndicator::processingUserGesture()) {
+    return true;
+    /*if (UserGestureIndicator::processingUserGesture()) {
         if (s_topmostIndicator->m_usageCallback) {
             s_topmostIndicator->m_usageCallback->userGestureUtilized();
             s_topmostIndicator->m_usageCallback = nullptr;
         }
         return true;
     }
-    return false;
+    return false;*/
 }
 
 bool UserGestureIndicator::processingUserGesture()
